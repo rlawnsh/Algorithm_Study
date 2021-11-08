@@ -1,5 +1,6 @@
 import sys
 sys.setrecursionlimit(10**5) #### 재귀 깊이 늘리기
+
 def dfs(data, x, y, long, height):
     if data[x][y] == 0:
         return
