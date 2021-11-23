@@ -33,4 +33,4 @@ def solution(genres, plays):
     
     return answer
 
-print(solution(["classic", "pop", "classic", "classic", "pop","jezz"],[500, 600, 150, 800, 2500,10000]))
+print(solution(["classic", "pop", "classic", "classic", "pop","jazz"],[500, 600, 150, 800, 2500,10000]))
