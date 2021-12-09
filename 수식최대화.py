@@ -17,7 +17,7 @@ def solution(expression):
         copy_sign = deepcopy(sign)
         for j in i: # -
             k = 0
-            while j in copy_sign: # [-, *, -, +]
+            while j in copy_sign: # [-, *, -, +], [100, 200, 300, 500, 20]
                 if copy_sign[k] == j:
                     if j == "-":
                         copy_number[k] -= copy_number[k+1]
