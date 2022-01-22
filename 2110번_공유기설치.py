@@ -56,7 +56,7 @@ def checkDistance(distance):
     return False
 
 
-#     가장 인접한 공유기 거리를 길게!
+#     가장 인접한 공유기 거리를 길게
 #     정답은 가장 가까운 공유기 거리
 
 binary(1, locations[-1])
