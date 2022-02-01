@@ -34,6 +34,9 @@ print(solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo","apeach frodo",
 
 모범 답안
 
+reports = {x : 0 for x in id_list}
+dict 초기화 할 때 유용
+
 '''
 
 def solution(id_list, report, k):
