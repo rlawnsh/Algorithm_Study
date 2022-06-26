@@ -1,5 +1,4 @@
 def solution(rectangle, characterX, characterY, itemX, itemY):
-    answer = 0
     board = [[0 for j in range(102)]  for i in range(102)]
     
     for x1, y1, x2, y2 in rectangle:
