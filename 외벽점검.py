@@ -1,55 +1,55 @@
-# def solution(n, weak, dist):
-#     answer = 0
-#     check = []
-#     end_dist = dist[-1]
-#     while dist:
-#         dist_pop = dist.pop()
-#         answer += 1
-#         # 시계
-#         for i in range(len(weak)):
-#             temp = []
-#             temp.append(weak[i])
-#             for j in weak[i+1:]:
-#                 if (j - weak[i]) <= dist_pop:
-#                     temp.append(j)
-#                 else:
-#                     break
-#             if len(temp) > 1 and dist_pop == end_dist:
-#                 append_list = list(set(weak) - set(temp))
-#                 if len(append_list) == 0:
-#                     return answer
-#                 check.append(append_list)
-#             elif len(temp) > 1:
-#                 for i in range(len(check)):
-#                     if len(list(set(temp) - set(check[i]))) == 0:
-#                         check[i] = list(set(check[i]) - set(temp))
-#                     if len(check[i]) == 0:
-#                         return answer
-#         # 반시계
-#         for i in range(len(weak)):
-#             temp = []
-#             temp.append(weak[i])
-#             counter_clock = list(reversed(weak[:i])) + list(reversed(weak[i+1:]))
-#             for j in counter_clock:
-#                 if (weak[i] - j) > 0 and (weak[i] - j) <= dist_pop:
-#                     temp.append(j)
-#                 elif (n - abs(j - weak[i])) <= dist_pop:
-#                     temp.append(j)
-#                 else:
-#                     break
-#             if len(temp) > 1 and dist_pop == end_dist:
-#                 append_list = list(set(weak) - set(temp))
-#                 if len(append_list) == 0:
-#                     return answer
-#                 check.append(append_list)
-#             elif len(temp) > 1:
-#                 for i in range(len(check)):
-#                     if len(list(set(temp) - set(check[i]))) == 0:
-#                         check[i] = list(set(check[i]) - set(temp))
-#                     if len(check[i]) == 0:
-#                         return answer
+# # def solution(n, weak, dist):
+# #     answer = 0
+# #     check = []
+# #     end_dist = dist[-1]
+# #     while dist:
+# #         dist_pop = dist.pop()
+# #         answer += 1
+# #         # 시계
+# #         for i in range(len(weak)):
+# #             temp = []
+# #             temp.append(weak[i])
+# #             for j in weak[i+1:]:
+# #                 if (j - weak[i]) <= dist_pop:
+# #                     temp.append(j)
+# #                 else:
+# #                     break
+# #             if len(temp) > 1 and dist_pop == end_dist:
+# #                 append_list = list(set(weak) - set(temp))
+# #                 if len(append_list) == 0:
+# #                     return answer
+# #                 check.append(append_list)
+# #             elif len(temp) > 1:
+# #                 for i in range(len(check)):
+# #                     if len(list(set(temp) - set(check[i]))) == 0:
+# #                         check[i] = list(set(check[i]) - set(temp))
+# #                     if len(check[i]) == 0:
+# #                         return answer
+# #         # 반시계
+# #         for i in range(len(weak)):
+# #             temp = []
+# #             temp.append(weak[i])
+# #             counter_clock = list(reversed(weak[:i])) + list(reversed(weak[i+1:]))
+# #             for j in counter_clock:
+# #                 if (weak[i] - j) > 0 and (weak[i] - j) <= dist_pop:
+# #                     temp.append(j)
+# #                 elif (n - abs(j - weak[i])) <= dist_pop:
+# #                     temp.append(j)
+# #                 else:
+# #                     break
+# #             if len(temp) > 1 and dist_pop == end_dist:
+# #                 append_list = list(set(weak) - set(temp))
+# #                 if len(append_list) == 0:
+# #                     return answer
+# #                 check.append(append_list)
+# #             elif len(temp) > 1:
+# #                 for i in range(len(check)):
+# #                     if len(list(set(temp) - set(check[i]))) == 0:
+# #                         check[i] = list(set(check[i]) - set(temp))
+# #                     if len(check[i]) == 0:
+# #                         return answer
     
-#     return -1
+# #     return -1
 
 def solution(n, weak, dist):
 
