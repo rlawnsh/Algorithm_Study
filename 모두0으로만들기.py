@@ -9,7 +9,6 @@ def dfs(x, a, tree, visited):
 
     for y in tree[x]:
         if not visited[y]:
-            visited[y]
             a[x] += dfs(y, a, tree, visited)
     answer += abs(a[x])
 
@@ -29,5 +28,6 @@ def solution(a, edges):
     visited = [0]*(len(a))
 
     dfs(0, a, tree, visited)
-
     return answer
+
+print(solution([-5,0,2,1,2], [[0,1],[3,4],[2,3],[0,3]]))
