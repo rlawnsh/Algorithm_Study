@@ -1,3 +1,4 @@
+
 def solution(dirs):
 #     (5,5) / (5,6) / (4,6) / (4,7) / (5,7) / (6,7) / (6,6) / (5,6) / (4,6) / (4,7)
 #     (5,5,5,6)
@@ -36,3 +37,6 @@ def solution(dirs):
         
     answer = len(new_way)
     return answer
+
+
+print(solution("ULURRDLLU"))
