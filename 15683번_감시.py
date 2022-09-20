@@ -11,7 +11,6 @@ move1 = list(combinations(move,1))
 move2 = [([-1,0], [1,0]), ([0,-1], [0,1])]
 move3 = [([-1,0], [0,-1]), ([-1,0], [0,1]), ([1,0], [0,-1]), ([1,0], [0,1])]
 move4 = list(combinations(move,3))
-print(move4)
 move5 = list(combinations(move,4))
 
 number = []
@@ -20,7 +19,7 @@ for i in range(len(office)):
         if office[i][j] != 0 and office[i][j] != 6:
             if office[i][j] == 1:
                 number.append(move1)
-            elif office[i][j] == 2:
+            elif office[i][j] == 2: 
                 number.append(move2)
             elif office[i][j] == 3:
                 number.append(move3)
@@ -45,7 +44,7 @@ for way in all_way:
                         t_j += y
                         if new_office[t_i][t_j] == 6:
                             break
-                        else:
+                        elif new_office[t_i][t_j] == 0:
                             new_office[t_i][t_j] = 7
                 start += 1
     tmp = 0
