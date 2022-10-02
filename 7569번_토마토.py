@@ -1,49 +1,25 @@
 from collections import deque
-from copy import copy
-
-def check_zero(box):
-    for i in range(h):
-        for j in range(n):
-            for k in range(m):
-                if box[i][j][k] == 0:
-                    return True
-    return False
+import sys
+input = sys.stdin.readline
 
 def bfs(box, que):
     dx = [-1, 1, 0, 0, -1, 1]
     dy = [0, 0, -1, 1]
-    day = 0
-    check = len(que)
-    temp = 0
     while que:
-        idx = que.popleft() # [h, n, m]
-        check -= 1
+        x, y, z = que.popleft() # [h, n, m]
         for i in range(6):
-            s = copy(idx)
             if i == 4 or i == 5:
-                if 0<= s[0] + dx[i] < h:
-                    s[0] += dx[i]
-                    if box[s[0]][s[1]][s[2]] == 0:
-                        box[s[0]][s[1]][s[2]] = 1
-                        temp += 1
-                        que.append([s[0], s[1], s[2]])
+                a = x + dx[i]
+                if 0<= a < h and box[a][y][z] == 0:
+                    box[a][y][z] = box[x][y][z] + 1
+                    que.append([a, y, z])
             else:
-                if 0<= s[1] + dx[i] < n and 0<= s[2] + dy[i] < m:
-                    s[1] += dx[i]
-                    s[2] += dy[i]
-                    if box[s[0]][s[1]][s[2]] == 0:
-                        box[s[0]][s[1]][s[2]] = 1
-                        temp += 1
-                        que.append([s[0], s[1], s[2]])
-        if check == 0 and temp != 0:
-            day += 1
-            check = temp
-            temp = 0
-
-    if check_zero(box):
-        return -1
-    else:
-        return day
+                b = y + dx[i]
+                c = z + dy[i]
+                if 0<= b < n and 0<= c < m and box[x][b][c] == 0:
+                    box[x][b][c] = box[x][y][z] + 1
+                    que.append([x, b, c])
+    return box
 m, n, h = map(int, input().split())
 box = []
 que = deque()
@@ -57,4 +33,14 @@ for i in range(h):
         temp.append(tomato)
     box.append(temp)
 
-print(bfs(box, que))
+box = bfs(box, que)
+day = 0
+for i in range(h):
+    for j in range(n):
+        for k in range(m):
+            if box[i][j][k] == 0:
+                print(-1)
+                exit(0)
+            day = max(day, box[i][j][k])     
+
+print(day-1)
